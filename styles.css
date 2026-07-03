@@ -321,6 +321,11 @@ section:nth-child(even) {
 
 .about-content p:last-child { margin-bottom: 0; }
 
+.about-content strong {
+  color: var(--black);
+  font-weight: 500;
+}
+
 /* ---- SERVICES / WHAT I DO ---- */
 .services-grid {
   display: grid;

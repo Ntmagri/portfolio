@@ -5,9 +5,15 @@ function setLanguage(lang) {
   currentLang = lang;
   document.getElementById('langToggle').textContent = lang === 'en' ? 'PT' : 'EN';
 
-  document.querySelectorAll('[data-en]').forEach(el => {
+document.querySelectorAll('[data-en]').forEach(el => {
     const text = el.getAttribute(`data-${lang}`);
-    if (text) el.textContent = text;
+    if (text) {
+      if (text.includes('**')) {
+        el.innerHTML = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+      } else {
+        el.textContent = text;
+      }
+    }
   });
 }
 
