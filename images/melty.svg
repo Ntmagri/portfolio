@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <rect width="800" height="600" fill="#1a1a1a"/>
+  <rect x="40" y="40" width="720" height="520" fill="#111111" rx="0"/>
+  <line x1="40" y1="40" x2="760" y2="40" stroke="#ffb800" stroke-width="3"/>
+  <line x1="40" y1="560" x2="760" y2="560" stroke="#ffb800" stroke-width="3"/>
+  <text x="400" y="230" font-family="Georgia, serif" font-size="92" font-weight="700" fill="#ffb800" text-anchor="middle" letter-spacing="-2">MELTY</text>
+  <text x="400" y="310" font-family="Georgia, serif" font-size="28" font-weight="400" fill="#ffb800" text-anchor="middle" letter-spacing="8" opacity="0.7">PHILLY STEAK</text>
+  <line x1="280" y1="340" x2="520" y2="340" stroke="#ffb800" stroke-width="1" opacity="0.4"/>
+  <text x="400" y="390" font-family="Arial, sans-serif" font-size="14" font-weight="400" fill="#ffb800" text-anchor="middle" letter-spacing="4" opacity="0.5">WE MELT IT. YOU LOVE IT.</text>
+</svg>

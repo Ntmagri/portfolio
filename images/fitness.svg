@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <rect width="800" height="600" fill="#0a1628"/>
+  <rect x="60" y="60" width="680" height="480" fill="#0d1f3c" stroke="#1e3a5f" stroke-width="1"/>
+  <rect x="60" y="60" width="680" height="3" fill="#4a9eff"/>
+  <text x="400" y="230" font-family="Arial, sans-serif" font-size="11" font-weight="400" fill="#4a9eff" text-anchor="middle" letter-spacing="8" opacity="0.8">AI FITNESS PLATFORM</text>
+  <text x="400" y="318" font-family="Georgia, serif" font-size="74" font-weight="300" fill="#ffffff" text-anchor="middle" letter-spacing="-2">TrainSmart</text>
+  <line x1="300" y1="348" x2="500" y2="348" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="400" y="384" font-family="Arial, sans-serif" font-size="12" fill="#4a9eff" text-anchor="middle" letter-spacing="4" opacity="0.6">IN DEVELOPMENT</text>
+</svg>

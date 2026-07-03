@@ -1,7 +1,3 @@
-// ============================================
-// NICHOLAS THOMAZ MAGRI — Portfolio JS
-// ============================================
-
 // --- LANGUAGE TOGGLE ---
 let currentLang = 'en';
 
