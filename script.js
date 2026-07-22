@@ -61,6 +61,7 @@ const FORMSPREE_ID = 'xgojaqdj';
 
 const sendBtn = document.getElementById('sendBtn');
 
+if (sendBtn) {
 sendBtn.addEventListener('click', async () => {
   const name    = document.getElementById('name').value.trim();
   const email   = document.getElementById('email').value.trim();
@@ -104,3 +105,4 @@ sendBtn.addEventListener('click', async () => {
     setTimeout(() => { sendBtn.textContent = originalText; }, 4000);
   }
 });
+}

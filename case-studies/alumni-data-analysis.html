@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Alumni Data Analysis — Nicholas Thomaz Magri</title>
+  <meta name="description" content="Data cleaning and analysis of a university alumni dataset, decoding demographic codes and analyzing giving-capacity indicators by major and geography." />
+
+  <link rel="icon" href="../favicon.ico" sizes="any" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <div class="nav-links">
+        <a href="../index.html#about" data-en="About" data-pt="Sobre">About</a>
+        <a href="../index.html#services" data-en="What I Do" data-pt="O que faço">What I Do</a>
+        <a href="../index.html#projects" data-en="Projects" data-pt="Projetos">Projects</a>
+        <a href="../index.html#experience" data-en="Experience" data-pt="Experiência">Experience</a>
+        <a href="../index.html#testimonials" data-en="Testimonials" data-pt="Depoimentos">Testimonials</a>
+        <a href="../index.html#contact" data-en="Contact" data-pt="Contato">Contact</a>
+      </div>
+      <button class="lang-toggle" id="langToggle">PT</button>
+    </div>
+  </nav>
+
+  <!-- CASE STUDY -->
+  <section id="case-header" class="case-header">
+    <div class="section-inner">
+      <a href="../index.html#projects" class="case-back" data-en="← Back to projects" data-pt="← Voltar aos projetos">← Back to projects</a>
+      <div class="case-meta">
+        <span class="project-type client" data-en="Data Analytics" data-pt="Análise de Dados">Data Analytics</span>
+        <span class="project-year">2023</span>
+      </div>
+      <h1 class="case-title">Alumni Data Analysis</h1>
+      <p class="case-summary" data-en="Data cleaning and exploratory analysis of a university alumni dataset — decoding enrichment-service demographic codes, joining fields, and analyzing giving-capacity indicators by major and geography. Originally my MBA capstone project." data-pt="Limpeza e análise exploratória de um conjunto de dados de ex-alunos universitários — decodificando códigos demográficos de serviços de enriquecimento de dados, unindo campos e analisando indicadores de capacidade de doação por curso e geografia. Originalmente meu projeto final de MBA.">
+        Data cleaning and exploratory analysis of a university alumni dataset — decoding enrichment-service demographic codes, joining fields, and analyzing giving-capacity indicators by major and geography. Originally my MBA capstone project.
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-inner">
+      <div class="case-disclaimer" data-en="This project was originally built as my MBA capstone at Louisiana Christian University, using real alumni records. That data is confidential and cannot be published (it includes personal information covered by FERPA and third-party data licensing agreements). The version shown here uses a randomly generated synthetic dataset built to match the exact structure and coding format of the original — same fields, same encoded values. The cleaning logic and analysis approach are identical to the original project; only the underlying data values are fake, so the specific numbers and charts below do not represent real people or a real institution." data-pt="Este projeto foi originalmente desenvolvido como meu trabalho final de MBA na Louisiana Christian University, usando registros reais de ex-alunos. Esses dados são confidenciais e não podem ser publicados (incluem informações pessoais protegidas pela FERPA e por acordos de licenciamento de dados de terceiros). A versão aqui apresentada usa um conjunto de dados sintético gerado aleatoriamente, construído para corresponder exatamente à estrutura e formato de codificação do original — mesmos campos, mesmos valores codificados. A lógica de limpeza e a abordagem de análise são idênticas ao projeto original; apenas os valores subjacentes são fictícios, portanto os números e gráficos abaixo não representam pessoas reais ou uma instituição real.">
+        This project was originally built as my MBA capstone at Louisiana Christian University, using real alumni records. That data is confidential and cannot be published (it includes personal information covered by FERPA and third-party data licensing agreements). The version shown here uses a randomly generated synthetic dataset built to match the exact structure and coding format of the original — same fields, same encoded values. The cleaning logic and analysis approach are identical to the original project; only the underlying data values are fake, so the specific numbers and charts below do not represent real people or a real institution.
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-inner">
+      <h2 class="case-section-title" data-en="The Problem" data-pt="O Problema">The Problem</h2>
+      <p data-en="Universities receive alumni and prospect data from third-party enrichment services in a coded format — income, net worth, homeownership, and years-at-residence are represented as single letters rather than readable values. Before this data can be used for anything (fundraising segmentation, outreach targeting, reporting), it has to be decoded, cleaned, and joined with academic records (major, GPA, graduation year)." data-pt="Universidades recebem dados de ex-alunos e potenciais doadores de serviços de terceiros em formato codificado — renda, patrimônio líquido, situação de moradia e tempo de residência são representados por letras únicas em vez de valores legíveis. Antes que esses dados possam ser usados para qualquer coisa (segmentação de captação de recursos, direcionamento de contato, relatórios), eles precisam ser decodificados, limpos e unidos aos registros acadêmicos (curso, GPA, ano de formatura).">
+        Universities receive alumni and prospect data from third-party enrichment services in a coded format — income, net worth, homeownership, and years-at-residence are represented as single letters rather than readable values. Before this data can be used for anything (fundraising segmentation, outreach targeting, reporting), it has to be decoded, cleaned, and joined with academic records (major, GPA, graduation year).
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-inner">
+      <h2 class="case-section-title" data-en="Approach" data-pt="Abordagem">Approach</h2>
+      <ol>
+        <li data-en="Loaded the raw joined dataset (academic records + enrichment-service demographic codes)." data-pt="Carreguei o conjunto de dados unido (registros acadêmicos + códigos demográficos do serviço de enriquecimento).">Loaded the raw joined dataset (academic records + enrichment-service demographic codes).</li>
+        <li data-en="Built lookup dictionaries to decode each coded field (age brackets, income brackets, net worth brackets, home value, years-at-residence, homeownership status, marital status)." data-pt="Construí dicionários de referência para decodificar cada campo (faixas etárias, faixas de renda, faixas de patrimônio líquido, valor do imóvel, tempo de residência, situação de moradia, estado civil).">Built lookup dictionaries to decode each coded field (age brackets, income brackets, net worth brackets, home value, years-at-residence, homeownership status, marital status).</li>
+        <li data-en="Applied the decoding across the full dataset and exported a cleaned version." data-pt="Apliquei a decodificação a todo o conjunto de dados e exportei uma versão limpa.">Applied the decoding across the full dataset and exported a cleaned version.</li>
+        <li data-en="Analyzed graduate counts by major." data-pt="Analisei a contagem de formados por curso.">Analyzed graduate counts by major.</li>
+        <li data-en="Cross-referenced net worth against major and graduation year to identify which academic programs produce the highest concentration of high-net-worth alumni." data-pt="Cruzei o patrimônio líquido com curso e ano de formatura para identificar quais cursos produzem a maior concentração de ex-alunos com alto patrimônio.">Cross-referenced net worth against major and graduation year to identify which academic programs produce the highest concentration of high-net-worth alumni.</li>
+        <li data-en="Aggregated alumni counts by state to understand geographic distribution." data-pt="Agreguei a contagem de ex-alunos por estado para entender a distribuição geográfica.">Aggregated alumni counts by state to understand geographic distribution.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-inner">
+      <h2 class="case-section-title" data-en="Results" data-pt="Resultados">Results</h2>
+      <p data-en="Graduate counts by major, showing program size distribution across the dataset:" data-pt="Contagem de formados por curso, mostrando a distribuição do tamanho dos programas no conjunto de dados:">Graduate counts by major, showing program size distribution across the dataset:</p>
+      <div class="case-image-wrap">
+        <img src="assets/alumni-graduates-by-major.png" alt="Graduates by major bar chart" />
+      </div>
+
+      <p data-en="High net-worth alumni ($1M+) by major and graduation year, surfacing which programs have historically produced the highest concentration of high-net-worth graduates — useful for fundraising and development prioritization:" data-pt="Ex-alunos de alto patrimônio líquido ($1M+) por curso e ano de formatura, mostrando quais programas historicamente produziram a maior concentração de formados com alto patrimônio — útil para priorização de captação de recursos:">High net-worth alumni ($1M+) by major and graduation year, surfacing which programs have historically produced the highest concentration of high-net-worth graduates — useful for fundraising and development prioritization:</p>
+      <div class="case-image-wrap">
+        <img src="assets/alumni-networth-by-major.png" alt="High net worth alumni by major and graduation year" />
+      </div>
+
+      <p data-en="Geographic distribution of alumni by state of residence (top 15):" data-pt="Distribuição geográfica de ex-alunos por estado de residência (top 15):">Geographic distribution of alumni by state of residence (top 15):</p>
+      <div class="case-image-wrap">
+        <img src="assets/alumni-by-state.png" alt="Alumni by state bar chart" />
+      </div>
+      <p data-en="The original project also built this geographic view as an interactive Tableau dashboard." data-pt="O projeto original também construiu essa visão geográfica como um dashboard interativo no Tableau.">The original project also built this geographic view as an interactive Tableau dashboard.</p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-inner">
+      <h2 class="case-section-title" data-en="Tools" data-pt="Ferramentas">Tools</h2>
+      <div class="case-stack">
+        <span>Python</span><span>pandas</span><span>matplotlib</span><span>Excel</span><span>Tableau</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section case-cta">
+    <div class="section-inner">
+      <a href="https://github.com/Ntmagri/alumni-data-analysis" target="_blank" rel="noopener" class="btn-primary" data-en="View full code on GitHub →" data-pt="Ver código completo no GitHub →">View full code on GitHub →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-left">© 2026 Nicholas Thomaz Magri</div>
+      <div class="footer-right">
+        <a href="https://www.linkedin.com/in/nicholas-magri-24b86b232/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Ntmagri" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Diamond Price Prediction — Nicholas Thomaz Magri</title>
+  <meta name="description" content="A linear regression model that predicts diamond prices based on carat weight. R² of 0.848." />
+
+  <link rel="icon" href="../favicon.ico" sizes="any" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <div class="nav-links">
+        <a href="../index.html#about" data-en="About" data-pt="Sobre">About</a>
+        <a href="../index.html#services" data-en="What I Do" data-pt="O que faço">What I Do</a>
+        <a href="../index.html#projects" data-en="Projects" data-pt="Projetos">Projects</a>
+        <a href="../index.html#experience" data-en="Experience" data-pt="Experiência">Experience</a>
+        <a href="../index.html#testimonials" data-en="Testimonials" data-pt="Depoimentos">Testimonials</a>
+        <a href="../index.html#contact" data-en="Contact" data-pt="Contato">Contact</a>
+      </div>
+      <button class="lang-toggle" id="langToggle">PT</button>
+    </div>
+  </nav>
+
+  <!-- CASE STUDY -->
+  <section id="case-header" class="case-header">
+    <div class="section-inner">
+      <a href="../index.html#projects" class="case-back" data-en="← Back to projects" data-pt="← Voltar aos projetos">← Back to projects</a>
+      <div class="case-meta">
+        <span class="project-type client" data-en="Data Analytics" data-pt="Análise de Dados">Data Analytics</span>
+        <span class="project-year">2023</span>
+      </div>
+      <h1 class="case-title">Diamond Price Prediction</h1>
+      <p class="case-summary" data-en="A linear regression model that predicts diamond prices from carat weight, tested against a held-out set of real diamonds to measure how much of the price variation it actually explains." data-pt="Um modelo de regressão linear que prevê preços de diamantes a partir do peso em quilates, testado em um conjunto real de diamantes para medir quanto da variação de preço ele realmente explica.">
+        A linear regression model that predicts diamond prices from carat weight, tested against a held-out set of real diamonds to measure how much of the price variation it actually explains.
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-inner">
+      <h2 class="case-section-title" data-en="The Problem" data-pt="O Problema">The Problem</h2>
+      <p data-en="Diamond pricing depends on several factors (carat, cut, color, clarity), but carat weight is typically the strongest driver of price. This project tests how well price can be predicted using carat alone, and quantifies how much of the price variation that one variable explains." data-pt="O preço de um diamante depende de vários fatores (quilate, corte, cor, clareza), mas o peso em quilates costuma ser o fator mais determinante. Este projeto testa o quão bem o preço pode ser previsto usando apenas o quilate, e quantifica quanto da variação de preço essa única variável explica.">
+        Diamond pricing depends on several factors (carat, cut, color, clarity), but carat weight is typically the strongest driver of price. This project tests how well price can be predicted using carat alone, and quantifies how much of the price variation that one variable explains.
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-inner">
+      <h2 class="case-section-title" data-en="Approach" data-pt="Abordagem">Approach</h2>
+      <ol>
+        <li data-en="Loaded the diamonds dataset (53,940 records) with carat, cut, color, clarity, depth, table, and price for each stone." data-pt="Carreguei o conjunto de dados de diamantes (53.940 registros) com quilate, corte, cor, clareza, profundidade, tabela e preço de cada pedra.">Loaded the diamonds dataset (53,940 records) with carat, cut, color, clarity, depth, table, and price for each stone.</li>
+        <li data-en="Ran a correlation analysis to confirm carat as the strongest predictor of price relative to other numeric features." data-pt="Realizei uma análise de correlação para confirmar o quilate como o melhor preditor de preço em relação às demais variáveis numéricas.">Ran a correlation analysis to confirm carat as the strongest predictor of price relative to other numeric features.</li>
+        <li data-en="Split the data into training (67%) and test (33%) sets." data-pt="Dividi os dados em conjuntos de treino (67%) e teste (33%).">Split the data into training (67%) and test (33%) sets.</li>
+        <li data-en="Trained a linear regression model using carat as the sole input feature." data-pt="Treinei um modelo de regressão linear usando apenas o quilate como variável de entrada.">Trained a linear regression model using carat as the sole input feature.</li>
+        <li data-en="Evaluated the model on the held-out test set and compared predicted vs. actual prices." data-pt="Avaliei o modelo no conjunto de teste e comparei os preços previstos com os reais.">Evaluated the model on the held-out test set and compared predicted vs. actual prices.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-inner">
+      <h2 class="case-section-title" data-en="Results" data-pt="Resultados">Results</h2>
+      <div class="case-stats">
+        <div class="case-stat">
+          <div class="case-stat-number">0.848</div>
+          <div class="case-stat-label" data-en="R² Score" data-pt="R² Score">R² Score</div>
+        </div>
+        <div class="case-stat">
+          <div class="case-stat-number">53,940</div>
+          <div class="case-stat-label" data-en="Diamonds Analyzed" data-pt="Diamantes Analisados">Diamonds Analyzed</div>
+        </div>
+      </div>
+      <p data-en="The model explains about 85% of the variation in diamond price using carat weight alone. The chart below plots actual prices (blue) against predicted prices (orange) across the test set — the orange points tracking tightly along the diagonal shows the model's predictions closely following real prices as carat increases, with the expected wider spread at higher carats where other factors (cut, clarity, color) start to matter more." data-pt="O modelo explica cerca de 85% da variação no preço dos diamantes usando apenas o peso em quilates. O gráfico abaixo mostra os preços reais (azul) contra os preços previstos (laranja) no conjunto de teste — os pontos laranja seguindo de perto a diagonal mostram que as previsões do modelo acompanham de perto os preços reais conforme o quilate aumenta, com a dispersão maior esperada em quilates mais altos, onde outros fatores (corte, clareza, cor) passam a importar mais.">
+        The model explains about 85% of the variation in diamond price using carat weight alone. The chart below plots actual prices (blue) against predicted prices (orange) across the test set — the orange points tracking tightly along the diagonal shows the model's predictions closely following real prices as carat increases, with the expected wider spread at higher carats where other factors (cut, clarity, color) start to matter more.
+      </p>
+      <div class="case-image-wrap">
+        <img src="assets/diamond-actual-vs-predicted.png" alt="Actual vs predicted diamond prices scatter plot" />
+      </div>
+      <div class="case-image-wrap">
+        <img src="assets/diamond-correlation-heatmap.png" alt="Correlation heatmap of diamond features vs price" />
+      </div>
+      <p class="case-image-caption" data-en="Correlation heatmap confirming carat as the dominant predictor of price." data-pt="Mapa de correlação confirmando o quilate como o preditor dominante de preço.">Correlation heatmap confirming carat as the dominant predictor of price.</p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-inner">
+      <h2 class="case-section-title" data-en="Tools" data-pt="Ferramentas">Tools</h2>
+      <div class="case-stack">
+        <span>Python</span><span>pandas</span><span>seaborn</span><span>scikit-learn</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section case-cta">
+    <div class="section-inner">
+      <a href="https://github.com/Ntmagri/diamond-price-prediction" target="_blank" rel="noopener" class="btn-primary" data-en="View full code on GitHub →" data-pt="Ver código completo no GitHub →">View full code on GitHub →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-left">© 2026 Nicholas Thomaz Magri</div>
+      <div class="footer-right">
+        <a href="https://www.linkedin.com/in/nicholas-magri-24b86b232/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Ntmagri" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>NYC Taxi Trip Duration Prediction — Nicholas Thomaz Magri</title>
+  <meta name="description" content="Predicting NYC taxi trip duration using automated feature engineering (Featuretools) and Gradient Boosting, staged across 3 feature sets." />
+
+  <link rel="icon" href="../favicon.ico" sizes="any" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <div class="nav-links">
+        <a href="../index.html#about" data-en="About" data-pt="Sobre">About</a>
+        <a href="../index.html#services" data-en="What I Do" data-pt="O que faço">What I Do</a>
+        <a href="../index.html#projects" data-en="Projects" data-pt="Projetos">Projects</a>
+        <a href="../index.html#experience" data-en="Experience" data-pt="Experiência">Experience</a>
+        <a href="../index.html#testimonials" data-en="Testimonials" data-pt="Depoimentos">Testimonials</a>
+        <a href="../index.html#contact" data-en="Contact" data-pt="Contato">Contact</a>
+      </div>
+      <button class="lang-toggle" id="langToggle">PT</button>
+    </div>
+  </nav>
+
+  <!-- CASE STUDY -->
+  <section id="case-header" class="case-header">
+    <div class="section-inner">
+      <a href="../data-analytics.html" class="case-back" data-en="← Back to data analytics projects" data-pt="← Voltar aos projetos de análise de dados">← Back to data analytics projects</a>
+      <div class="case-meta">
+        <span class="project-type client" data-en="Data Analytics" data-pt="Análise de Dados">Data Analytics</span>
+        <span class="project-year">2024</span>
+      </div>
+      <h1 class="case-title">NYC Taxi Trip Duration Prediction</h1>
+      <p class="case-summary" data-en="Predicting how long a taxi trip in New York City will take, using automated feature engineering (Featuretools) combined with Gradient Boosting, staged across three feature sets to measure how much each addition actually helps." data-pt="Prevendo quanto tempo uma corrida de táxi em Nova York vai durar, usando engenharia automática de atributos (Featuretools) combinada com Gradient Boosting, em três etapas para medir o quanto cada adição realmente ajuda.">
+        Predicting how long a taxi trip in New York City will take, using automated feature engineering (Featuretools) combined with Gradient Boosting, staged across three feature sets to measure how much each addition actually helps.
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-inner">
+      <h2 class="case-section-title" data-en="The Problem" data-pt="O Problema">The Problem</h2>
+      <p data-en="Predicting how long a trip will take is a common real-world problem in logistics, ride-sharing, and delivery. This project uses a dataset of 10,000 NYC taxi trips (pickup/dropoff timestamps, coordinates, neighborhoods, distance, passenger count) to test how much feature engineering, done automatically rather than by hand, can improve prediction accuracy." data-pt="Prever quanto tempo uma corrida vai durar é um problema comum e real em logística, aplicativos de transporte e entregas. Este projeto usa um conjunto de 10.000 corridas de táxi em Nova York (horários de retirada/entrega, coordenadas, bairros, distância, número de passageiros) para testar o quanto a engenharia de atributos, feita automaticamente em vez de manualmente, pode melhorar a precisão da previsão.">
+        Predicting how long a trip will take is a common real-world problem in logistics, ride-sharing, and delivery. This project uses a dataset of 10,000 NYC taxi trips (pickup/dropoff timestamps, coordinates, neighborhoods, distance, passenger count) to test how much feature engineering, done automatically rather than by hand, can improve prediction accuracy.
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-inner">
+      <h2 class="case-section-title" data-en="Approach" data-pt="Abordagem">Approach</h2>
+      <ol>
+        <li data-en="Used Featuretools' Deep Feature Synthesis to automatically generate features from the raw trip, pickup neighborhood, and dropoff neighborhood tables." data-pt="Usei o Deep Feature Synthesis do Featuretools para gerar automaticamente atributos a partir das tabelas brutas de corridas, bairro de retirada e bairro de entrega.">Used Featuretools' Deep Feature Synthesis to automatically generate features from the raw trip, pickup neighborhood, and dropoff neighborhood tables.</li>
+        <li data-en="Built 3 versions of the feature set, from minimal to rich, to isolate how much each addition improves the model." data-pt="Construí 3 versões do conjunto de atributos, de mínima a completa, para isolar o quanto cada adição melhora o modelo.">Built 3 versions of the feature set, from minimal to rich, to isolate how much each addition improves the model.</li>
+        <li data-en="Trained a Gradient Boosting Regressor on each feature set version, predicting log(trip_duration + 1)." data-pt="Treinei um Gradient Boosting Regressor em cada versão do conjunto de atributos, prevendo log(trip_duration + 1).">Trained a Gradient Boosting Regressor on each feature set version, predicting log(trip_duration + 1).</li>
+        <li data-en="Compared R² across all 3 stages and ranked feature importance for the richest model." data-pt="Comparei o R² nas 3 etapas e classifiquei a importância dos atributos para o modelo mais completo.">Compared R² across all 3 stages and ranked feature importance for the richest model.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-inner">
+      <h2 class="case-section-title" data-en="Results" data-pt="Resultados">Results</h2>
+      <div class="case-stats">
+        <div class="case-stat">
+          <div class="case-stat-number">10,000</div>
+          <div class="case-stat-label" data-en="Trips Analyzed" data-pt="Corridas Analisadas">Trips Analyzed</div>
+        </div>
+        <div class="case-stat">
+          <div class="case-stat-number">0.808</div>
+          <div class="case-stat-label" data-en="Best R² Score" data-pt="Melhor R² Score">Best R² Score</div>
+        </div>
+        <div class="case-stat">
+          <div class="case-stat-number">72</div>
+          <div class="case-stat-label" data-en="Features (Richest Model)" data-pt="Atributos (Modelo Mais Completo)">Features (Richest Model)</div>
+        </div>
+      </div>
+      <p data-en="Trip duration is right-skewed: most trips take under 1,000 seconds (about 16 minutes), with a small tail of longer trips." data-pt="A duração das corridas é assimétrica à direita: a maioria das corridas leva menos de 1.000 segundos (cerca de 16 minutos), com uma cauda menor de corridas mais longas.">
+        Trip duration is right-skewed: most trips take under 1,000 seconds (about 16 minutes), with a small tail of longer trips.
+      </p>
+      <div class="case-image-wrap">
+        <img src="assets/taxi-duration-distribution.png" alt="Distribution of actual trip durations" />
+      </div>
+      <p data-en="Across the three feature-engineering stages, R² went from 0.757 (basic trip attributes plus a simple weekend flag) to 0.808 (adding minute/hour/day/week/month features) to 0.799 (adding neighborhood-level aggregations on top). Interestingly, the richest feature set didn't perform best — the extra aggregation features added complexity without a clear payoff, a useful reminder that automated feature engineering doesn't guarantee improvement past a certain point." data-pt="Nas três etapas de engenharia de atributos, o R² foi de 0,757 (atributos básicos da corrida mais uma marcação simples de fim de semana) para 0,808 (adicionando atributos de minuto/hora/dia/semana/mês) e depois para 0,799 (adicionando agregações no nível de bairro). Curiosamente, o conjunto de atributos mais completo não teve o melhor desempenho — os atributos extras de agregação adicionaram complexidade sem um ganho claro, um lembrete útil de que engenharia automática de atributos nem sempre melhora o resultado além de certo ponto.">
+        Across the three feature-engineering stages, R² went from 0.757 (basic trip attributes plus a simple weekend flag) to 0.808 (adding minute/hour/day/week/month features) to 0.799 (adding neighborhood-level aggregations on top). Interestingly, the richest feature set didn't perform best — the extra aggregation features added complexity without a clear payoff, a useful reminder that automated feature engineering doesn't guarantee improvement past a certain point.
+      </p>
+      <p data-en="The final model's predicted duration distribution closely mirrors the real one, and trip_distance dominates feature importance by far (0.867), followed by dropoff location and pickup hour, matching intuition: distance drives duration, location affects route/congestion, and hour affects traffic." data-pt="A distribuição de duração prevista pelo modelo final espelha de perto a real, e trip_distance domina a importância dos atributos por larga margem (0,867), seguido pela localização de entrega e pela hora de retirada, o que confirma a intuição: distância determina duração, localização afeta rota/congestionamento e horário afeta o trânsito.">
+        The final model's predicted duration distribution closely mirrors the real one, and trip_distance dominates feature importance by far (0.867), followed by dropoff location and pickup hour, matching intuition: distance drives duration, location affects route/congestion, and hour affects traffic.
+      </p>
+      <div class="case-image-wrap">
+        <img src="assets/taxi-predicted-distribution.png" alt="Distribution of predicted trip durations" />
+      </div>
+      <p class="case-image-caption" data-en="Predicted trip durations on the test set, closely tracking the shape of the real distribution above." data-pt="Durações previstas no conjunto de teste, acompanhando de perto o formato da distribuição real acima.">Predicted trip durations on the test set, closely tracking the shape of the real distribution above.</p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-inner">
+      <h2 class="case-section-title" data-en="Tools" data-pt="Ferramentas">Tools</h2>
+      <div class="case-stack">
+        <span>Python</span><span>Featuretools</span><span>scikit-learn</span><span>pandas</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section case-cta">
+    <div class="section-inner">
+      <a href="https://github.com/Ntmagri/nyc-taxi-trip-duration" target="_blank" rel="noopener" class="btn-primary" data-en="View full code on GitHub →" data-pt="Ver código completo no GitHub →">View full code on GitHub →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-left">© 2026 Nicholas Thomaz Magri</div>
+      <div class="footer-right">
+        <a href="https://www.linkedin.com/in/nicholas-magri-24b86b232/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Ntmagri" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

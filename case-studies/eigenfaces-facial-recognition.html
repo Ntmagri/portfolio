@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Eigenfaces Facial Recognition — Nicholas Thomaz Magri</title>
+  <meta name="description" content="A PCA-based facial recognition system (Eigenfaces) built on 100 face images, with reconstruction and face-space comparison." />
+
+  <link rel="icon" href="../favicon.ico" sizes="any" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <div class="nav-links">
+        <a href="../index.html#about" data-en="About" data-pt="Sobre">About</a>
+        <a href="../index.html#services" data-en="What I Do" data-pt="O que faço">What I Do</a>
+        <a href="../index.html#projects" data-en="Projects" data-pt="Projetos">Projects</a>
+        <a href="../index.html#experience" data-en="Experience" data-pt="Experiência">Experience</a>
+        <a href="../index.html#testimonials" data-en="Testimonials" data-pt="Depoimentos">Testimonials</a>
+        <a href="../index.html#contact" data-en="Contact" data-pt="Contato">Contact</a>
+      </div>
+      <button class="lang-toggle" id="langToggle">PT</button>
+    </div>
+  </nav>
+
+  <!-- CASE STUDY -->
+  <section id="case-header" class="case-header">
+    <div class="section-inner">
+      <a href="../data-analytics.html" class="case-back" data-en="← Back to data analytics projects" data-pt="← Voltar aos projetos de análise de dados">← Back to data analytics projects</a>
+      <div class="case-meta">
+        <span class="project-type client" data-en="Data Analytics" data-pt="Análise de Dados">Data Analytics</span>
+        <span class="project-year">2024</span>
+      </div>
+      <h1 class="case-title">Eigenfaces Facial Recognition</h1>
+      <p class="case-summary" data-en="A classic computer vision technique that uses PCA to find the directions faces vary along the most, then reconstructs and compares faces using only a small number of those directions." data-pt="Uma técnica clássica de visão computacional que usa PCA para encontrar as direções em que os rostos mais variam, e então reconstrói e compara rostos usando apenas um pequeno número dessas direções.">
+        A classic computer vision technique that uses PCA to find the directions faces vary along the most, then reconstructs and compares faces using only a small number of those directions.
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-inner">
+      <h2 class="case-section-title" data-en="The Problem" data-pt="O Problema">The Problem</h2>
+      <p data-en="A face image is just a big grid of pixel values, but most of that information is redundant, since every face shares the same basic structure (eyes, nose, mouth in roughly the same places). Eigenfaces, from Turk and Pentland's 1991 paper, asks: what if we found the handful of directions faces vary the most along, and represented every face as a combination of just those?" data-pt="Uma imagem de rosto é apenas uma grade grande de valores de pixel, mas a maior parte dessa informação é redundante, já que todo rosto compartilha a mesma estrutura básica (olhos, nariz e boca em posições parecidas). O método Eigenfaces, do artigo de Turk e Pentland de 1991, propõe: e se encontrássemos as poucas direções em que os rostos mais variam, e representássemos cada rosto como uma combinação dessas direções?">
+        A face image is just a big grid of pixel values, but most of that information is redundant, since every face shares the same basic structure (eyes, nose, mouth in roughly the same places). Eigenfaces, from Turk and Pentland's 1991 paper, asks: what if we found the handful of directions faces vary the most along, and represented every face as a combination of just those?
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-inner">
+      <h2 class="case-section-title" data-en="Approach" data-pt="Abordagem">Approach</h2>
+      <ol>
+        <li data-en="Loaded 100 face images (64×64 grayscale) from LFWcrop, a cropped subset of the Labeled Faces in the Wild dataset." data-pt="Carreguei 100 imagens de rosto (64×64 em escala de cinza) do LFWcrop, um subconjunto recortado do dataset Labeled Faces in the Wild.">Loaded 100 face images (64×64 grayscale) from LFWcrop, a cropped subset of the Labeled Faces in the Wild dataset.</li>
+        <li data-en="Standardized and centered every image (subtracted the mean face from the entire set)." data-pt="Padronizei e centralizei cada imagem (subtraindo o rosto médio de todo o conjunto).">Standardized and centered every image (subtracted the mean face from the entire set).</li>
+        <li data-en="Computed the eigenfaces: the eigenvectors of the covariance matrix of the training set, found efficiently via the standard trick of decomposing a much smaller matrix instead of the full pixel-by-pixel covariance matrix." data-pt="Calculei as eigenfaces: os autovetores da matriz de covariância do conjunto de treino, obtidos de forma eficiente decompondo uma matriz muito menor em vez da matriz de covariância pixel a pixel completa.">Computed the eigenfaces: the eigenvectors of the covariance matrix of the training set, found efficiently via the standard trick of decomposing a much smaller matrix instead of the full pixel-by-pixel covariance matrix.</li>
+        <li data-en="Reconstructed 16 unseen test faces as a linear combination of the eigenfaces." data-pt="Reconstruí 16 rostos de teste nunca vistos como uma combinação linear das eigenfaces.">Reconstructed 16 unseen test faces as a linear combination of the eigenfaces.</li>
+        <li data-en="Compared test faces to training faces by projecting both into 'face space' and measuring Euclidean distance." data-pt="Comparei rostos de teste com rostos de treino projetando ambos no 'espaço de rostos' e medindo a distância euclidiana.">Compared test faces to training faces by projecting both into "face space" and measuring Euclidean distance.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-inner">
+      <h2 class="case-section-title" data-en="Results" data-pt="Resultados">Results</h2>
+      <div class="case-stats">
+        <div class="case-stat">
+          <div class="case-stat-number">100</div>
+          <div class="case-stat-label" data-en="Training Faces" data-pt="Rostos de Treino">Training Faces</div>
+        </div>
+        <div class="case-stat">
+          <div class="case-stat-number">99</div>
+          <div class="case-stat-label" data-en="Eigenfaces Computed" data-pt="Eigenfaces Calculadas">Eigenfaces Computed</div>
+        </div>
+        <div class="case-stat">
+          <div class="case-stat-number">16</div>
+          <div class="case-stat-label" data-en="Faces Reconstructed" data-pt="Rostos Reconstruídos">Faces Reconstructed</div>
+        </div>
+      </div>
+      <p data-en="The mean face below is the average of all 100 training faces blended together, a smooth, feature-less baseline every other face is measured against." data-pt="O rosto médio abaixo é a média dos 100 rostos de treino combinados, uma base suave e sem traços marcantes contra a qual todo outro rosto é medido.">
+        The mean face below is the average of all 100 training faces blended together, a smooth, feature-less baseline every other face is measured against.
+      </p>
+      <div class="case-image-wrap">
+        <img src="assets/eigenfaces-mean-face.png" alt="Mean face computed from 100 training images" />
+      </div>
+      <p data-en="The eigenfaces themselves look ghostly, since each one represents a direction of variation rather than a real person. Together, they form the basis every face in the dataset can be reconstructed from." data-pt="As eigenfaces em si parecem fantasmagóricas, já que cada uma representa uma direção de variação e não uma pessoa real. Juntas, elas formam a base a partir da qual qualquer rosto do dataset pode ser reconstruído.">
+        The eigenfaces themselves look ghostly, since each one represents a direction of variation rather than a real person. Together, they form the basis every face in the dataset can be reconstructed from.
+      </p>
+      <div class="case-image-wrap">
+        <img src="assets/eigenfaces-eigenfaces.png" alt="Grid of computed eigenfaces" />
+      </div>
+      <p data-en="Reconstructing unseen test faces from just those eigenfaces produces recognizably face-like images, but with less individual detail than the real test photos. This is the honest limitation of the method: with only 100 training faces, the learned 'face space' doesn't fully capture features specific to people the model has never seen. More training faces would sharpen the reconstructions." data-pt="Reconstruir rostos de teste nunca vistos usando apenas essas eigenfaces produz imagens reconhecíveis como rostos, mas com menos detalhes individuais do que as fotos reais de teste. Essa é a limitação honesta do método: com apenas 100 rostos de treino, o 'espaço de rostos' aprendido não captura totalmente características específicas de pessoas que o modelo nunca viu. Mais rostos de treino tornariam as reconstruções mais nítidas.">
+        Reconstructing unseen test faces from just those eigenfaces produces recognizably face-like images, but with less individual detail than the real test photos. This is the honest limitation of the method: with only 100 training faces, the learned "face space" doesn't fully capture features specific to people the model has never seen. More training faces would sharpen the reconstructions.
+      </p>
+      <div class="case-image-wrap">
+        <img src="assets/eigenfaces-test-images.png" alt="Test faces before reconstruction" />
+      </div>
+      <div class="case-image-wrap">
+        <img src="assets/eigenfaces-reconstructed.png" alt="Test faces reconstructed from eigenfaces" />
+      </div>
+      <p class="case-image-caption" data-en="Original test faces (top) vs. their reconstructions from the eigenfaces alone (bottom)." data-pt="Rostos de teste originais (acima) vs. suas reconstruções feitas apenas a partir das eigenfaces (abaixo).">Original test faces (top) vs. their reconstructions from the eigenfaces alone (bottom).</p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-inner">
+      <h2 class="case-section-title" data-en="Tools" data-pt="Ferramentas">Tools</h2>
+      <div class="case-stack">
+        <span>Python</span><span>NumPy</span><span>scikit-learn</span><span>scikit-image</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section case-cta">
+    <div class="section-inner">
+      <a href="https://github.com/Ntmagri/eigenfaces-pca-facial-recognition" target="_blank" rel="noopener" class="btn-primary" data-en="View full code on GitHub →" data-pt="Ver código completo no GitHub →">View full code on GitHub →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-left">© 2026 Nicholas Thomaz Magri</div>
+      <div class="footer-right">
+        <a href="https://www.linkedin.com/in/nicholas-magri-24b86b232/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Ntmagri" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

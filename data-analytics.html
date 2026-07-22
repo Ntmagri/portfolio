@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Data Analytics Projects — Nicholas Thomaz Magri</title>
+  <meta name="description" content="Five data analytics and machine learning projects: classification, regression, dashboards, computer vision, and automated feature engineering." />
+
+  <link rel="icon" href="favicon.ico" sizes="any" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <div class="nav-links">
+        <a href="index.html#about" data-en="About" data-pt="Sobre">About</a>
+        <a href="index.html#services" data-en="What I Do" data-pt="O que faço">What I Do</a>
+        <a href="index.html#projects" data-en="Projects" data-pt="Projetos">Projects</a>
+        <a href="index.html#experience" data-en="Experience" data-pt="Experiência">Experience</a>
+        <a href="index.html#testimonials" data-en="Testimonials" data-pt="Depoimentos">Testimonials</a>
+        <a href="index.html#contact" data-en="Contact" data-pt="Contato">Contact</a>
+      </div>
+      <button class="lang-toggle" id="langToggle">PT</button>
+    </div>
+  </nav>
+
+  <!-- HUB HEADER -->
+  <section id="case-header" class="case-header">
+    <div class="section-inner">
+      <a href="index.html#projects" class="case-back" data-en="← Back to projects" data-pt="← Voltar aos projetos">← Back to projects</a>
+      <div class="case-meta">
+        <span class="project-type client" data-en="Data Analytics" data-pt="Análise de Dados">Data Analytics</span>
+      </div>
+      <h1 class="case-title" data-en="Data Analytics Projects" data-pt="Projetos de Análise de Dados">Data Analytics Projects</h1>
+      <p class="case-summary" data-en="Five projects spanning classification, regression, dashboards, computer vision, and automated feature engineering. Click any project below for the full write-up, results, and code." data-pt="Cinco projetos que passam por classificação, regressão, dashboards, visão computacional e engenharia automática de atributos. Clique em qualquer projeto abaixo para ver o estudo completo, os resultados e o código.">
+        Five projects spanning classification, regression, dashboards, computer vision, and automated feature engineering. Click any project below for the full write-up, results, and code.
+      </p>
+    </div>
+  </section>
+
+  <!-- PROJECT LIST -->
+  <section id="projects">
+    <div class="section-inner">
+      <div class="projects-list">
+
+        <!-- Credit Score Classifier -->
+        <div class="project-item reveal">
+          <div class="project-meta">
+            <span class="project-type client" data-en="Classification" data-pt="Classificação">Classification</span>
+            <span class="project-year">2023</span>
+          </div>
+          <div class="project-body">
+            <div class="project-text">
+              <h3 class="project-title">Credit Score Classifier</h3>
+              <p class="project-desc" data-en="A machine learning model that classifies bank customers into credit score categories to support automated credit decisions. Compared Random Forest and KNN, reaching 82.4% accuracy on 100,000 customer records." data-pt="Um modelo de machine learning que classifica clientes bancários em categorias de score de crédito para apoiar decisões automatizadas de crédito. Comparei Random Forest e KNN, alcançando 82,4% de acurácia em 100.000 registros de clientes.">
+                A machine learning model that classifies bank customers into credit score categories to support automated credit decisions. Compared Random Forest and KNN, reaching 82.4% accuracy on 100,000 customer records.
+              </p>
+              <div class="project-stack">
+                <span>Python</span><span>pandas</span><span>scikit-learn</span>
+              </div>
+              <a href="case-studies/credit-score-classifier.html" class="project-link" data-en="View case study →" data-pt="Ver estudo de caso →">View case study →</a>
+            </div>
+            <div class="project-img-wrap"><img src="images/credit-score.svg" alt="Credit Score Classifier" class="project-img"/></div>
+          </div>
+        </div>
+
+        <!-- Diamond Price Prediction -->
+        <div class="project-item reveal">
+          <div class="project-meta">
+            <span class="project-type client" data-en="Regression" data-pt="Regressão">Regression</span>
+            <span class="project-year">2023</span>
+          </div>
+          <div class="project-body">
+            <div class="project-text">
+              <h3 class="project-title">Diamond Price Prediction</h3>
+              <p class="project-desc" data-en="A linear regression model predicting diamond prices from carat weight, explaining about 85% of price variation (R² = 0.848) on nearly 54,000 real diamonds." data-pt="Um modelo de regressão linear que prevê preços de diamantes a partir do quilate, explicando cerca de 85% da variação de preço (R² = 0,848) em quase 54.000 diamantes reais.">
+                A linear regression model predicting diamond prices from carat weight, explaining about 85% of price variation (R² = 0.848) on nearly 54,000 real diamonds.
+              </p>
+              <div class="project-stack">
+                <span>Python</span><span>pandas</span><span>seaborn</span><span>scikit-learn</span>
+              </div>
+              <a href="case-studies/diamond-price-prediction.html" class="project-link" data-en="View case study →" data-pt="Ver estudo de caso →">View case study →</a>
+            </div>
+            <div class="project-img-wrap"><img src="images/diamond-price.svg" alt="Diamond Price Prediction" class="project-img"/></div>
+          </div>
+        </div>
+
+        <!-- Alumni Data Analysis -->
+        <div class="project-item reveal">
+          <div class="project-meta">
+            <span class="project-type client" data-en="Data Cleaning & BI" data-pt="Limpeza de Dados & BI">Data Cleaning & BI</span>
+            <span class="project-year">2023</span>
+          </div>
+          <div class="project-body">
+            <div class="project-text">
+              <h3 class="project-title">Alumni Data Analysis</h3>
+              <p class="project-desc" data-en="MBA capstone project: cleaned and decoded enrichment-service demographic data for university alumni, then analyzed giving-capacity indicators by major and built a geographic distribution dashboard in Tableau." data-pt="Projeto final de MBA: limpei e decodifiquei dados demográficos de ex-alunos universitários, depois analisei indicadores de capacidade de doação por curso e construí um dashboard de distribuição geográfica no Tableau.">
+                MBA capstone project: cleaned and decoded enrichment-service demographic data for university alumni, then analyzed giving-capacity indicators by major and built a geographic distribution dashboard in Tableau.
+              </p>
+              <div class="project-stack">
+                <span>Python</span><span>pandas</span><span>Excel</span><span>Tableau</span>
+              </div>
+              <a href="case-studies/alumni-data-analysis.html" class="project-link" data-en="View case study →" data-pt="Ver estudo de caso →">View case study →</a>
+            </div>
+            <div class="project-img-wrap"><img src="images/alumni-analysis.svg" alt="Alumni Data Analysis" class="project-img"/></div>
+          </div>
+        </div>
+
+        <!-- Eigenfaces Facial Recognition -->
+        <div class="project-item reveal">
+          <div class="project-meta">
+            <span class="project-type client" data-en="Computer Vision" data-pt="Visão Computacional">Computer Vision</span>
+            <span class="project-year">2024</span>
+          </div>
+          <div class="project-body">
+            <div class="project-text">
+              <h3 class="project-title">Eigenfaces Facial Recognition</h3>
+              <p class="project-desc" data-en="A PCA-based facial recognition system built on 100 face images from the LFWcrop dataset: computed eigenfaces, reconstructed unseen test faces, and compared faces in reduced 'face space'." data-pt="Um sistema de reconhecimento facial baseado em PCA construído sobre 100 imagens de rosto do dataset LFWcrop: calculei eigenfaces, reconstruí rostos de teste nunca vistos e comparei rostos em um 'espaço de rostos' reduzido.">
+                A PCA-based facial recognition system built on 100 face images from the LFWcrop dataset: computed eigenfaces, reconstructed unseen test faces, and compared faces in reduced "face space."
+              </p>
+              <div class="project-stack">
+                <span>Python</span><span>NumPy</span><span>scikit-learn</span><span>scikit-image</span>
+              </div>
+              <a href="case-studies/eigenfaces-facial-recognition.html" class="project-link" data-en="View case study →" data-pt="Ver estudo de caso →">View case study →</a>
+            </div>
+            <div class="project-img-wrap"><img src="images/eigenfaces.svg" alt="Eigenfaces Facial Recognition" class="project-img"/></div>
+          </div>
+        </div>
+
+        <!-- NYC Taxi Trip Duration -->
+        <div class="project-item reveal">
+          <div class="project-meta">
+            <span class="project-type client" data-en="Feature Engineering" data-pt="Engenharia de Atributos">Feature Engineering</span>
+            <span class="project-year">2024</span>
+          </div>
+          <div class="project-body">
+            <div class="project-text">
+              <h3 class="project-title">NYC Taxi Trip Duration Prediction</h3>
+              <p class="project-desc" data-en="Predicted taxi trip duration in New York City using automated feature engineering (Featuretools) and Gradient Boosting, staged across three feature sets to isolate how much each addition actually helps, reaching R² = 0.808 on 10,000 trips." data-pt="Previ a duração de corridas de táxi em Nova York usando engenharia automática de atributos (Featuretools) e Gradient Boosting, em três etapas para isolar o quanto cada adição realmente ajuda, alcançando R² = 0,808 em 10.000 corridas.">
+                Predicted taxi trip duration in New York City using automated feature engineering (Featuretools) and Gradient Boosting, staged across three feature sets to isolate how much each addition actually helps, reaching R² = 0.808 on 10,000 trips.
+              </p>
+              <div class="project-stack">
+                <span>Python</span><span>Featuretools</span><span>scikit-learn</span><span>pandas</span>
+              </div>
+              <a href="case-studies/nyc-taxi-trip-duration.html" class="project-link" data-en="View case study →" data-pt="Ver estudo de caso →">View case study →</a>
+            </div>
+            <div class="project-img-wrap"><img src="images/nyc-taxi.svg" alt="NYC Taxi Trip Duration Prediction" class="project-img"/></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-left">© 2026 Nicholas Thomaz Magri</div>
+      <div class="footer-right">
+        <a href="https://www.linkedin.com/in/nicholas-magri-24b86b232/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Ntmagri" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
